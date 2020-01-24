@@ -6,8 +6,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  color="dark"  >
+<ion-content  color="dark">  
   
-  <app-noticias></app-noticias>
+  <app-noticias [noticias]="noticias" ></app-noticias>
+  
+  <ion-infinitie-scroll  threshold="150px"  (ionInfinitie)="loadData($event)" >
+    <ion-infinitie-scroll-content loadingText="Cargando data..." >
+
+    </ion-infinitie-scroll-content>
+  </ion-infinitie-scroll>
 
 </ion-content>

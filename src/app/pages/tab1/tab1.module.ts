@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ComponentsModule } from '../../components/components.module';
 
+
 @NgModule({
   imports: [
     ComponentsModule,
