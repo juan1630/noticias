@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { respuestaTopHeadlines } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
 
@@ -16,6 +16,8 @@ const headers = new HttpHeaders({
 export class NoticiasService {
 
   headLines = 0;
+  categoriaActual = '';
+  categoriaPage = 0;
 
   constructor(  private http: HttpClient  ) { }
 
@@ -38,8 +40,19 @@ export class NoticiasService {
 
 
   getCategoria( categoria: string  ) {
+
+
+    if( this.categoriaActual === categoria  ) {
+      
+      this.categoriaPage++; 
+
+    }else {
+      this.categoriaPage = 1;
+      this.categoriaActual = categoria;
+
+    }
     
-    return this.ejecutarQuery<respuestaTopHeadlines>(`/top-headlines?country=us&category=${categoria}`);
+    return this.ejecutarQuery<respuestaTopHeadlines>(`/top-headlines?country=us&category=${categoria}&page=${this.categoriaPage}`);
  
   }
 

@@ -46,3 +46,22 @@ ion-segment-button{
 .segment-button-checked {
     color:var(--ion-color-primary) !important;
 }
+
+
+ion-card-title, ion-img {
+    cursor: pointer;
+}
+
+.action-dark  {
+    background-color: var(--ion-color-dark) !important;
+    color: white !important;
+}
+
+
+.action-dark ion-icon{
+    color: white !important;
+}
+
+.ios .action-sheet-icon{
+    display: none;
+}

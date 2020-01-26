@@ -18,4 +18,13 @@
 <ion-content color="dark">
 
   <app-noticias  [noticias]="noticias"  > </app-noticias>
+
+  <ion-infinite-scroll  threshold="150px"  (ionInfinitie)="loadData($event)" >
+    <ion-infinite-scroll-content loadingText="Cargando data..." >
+
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+
 </ion-content>

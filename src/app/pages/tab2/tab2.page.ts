@@ -34,13 +34,22 @@ export class Tab2Page implements OnInit {
 
 
   
-  cargarNoticias( categoria: string ) {
+  cargarNoticias( categoria: string, event? ) {
 
       this.noticiasService.getCategoria( categoria ).subscribe( (res) => {
-      console.log(res);
-      this.noticias.push( ...res.articles )
-    } )
+      this.noticias.push( ...res.articles );
+      
+      if( event ) {
+        event.target.complete();
+      }
+    
+    })
 
+  }
+
+
+  loadData( event) {
+    this.cargarNoticias( this.segment.value, event );
   }
 
 }

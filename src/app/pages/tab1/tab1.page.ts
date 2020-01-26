@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { NoticiasService } from '../../services/noticias.service';
 import { Article } from '../../interfaces/interfaces';
 
@@ -7,6 +7,8 @@ import { Article } from '../../interfaces/interfaces';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
+
 export class Tab1Page implements OnInit {
 
   noticias : Article[] = [];
