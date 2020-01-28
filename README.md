@@ -11,3 +11,6 @@
 - mode de la aplicacion
 - Uso de plugins de ionic
 - Social sharing
+- Eliminar de favoritos
+- logica de la aplicacion
+- aniamaciones con animated css
